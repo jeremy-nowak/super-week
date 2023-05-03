@@ -2,8 +2,11 @@
 
 namespace App\Model;
 
+use PDO;
+
 class UserModel{
     private $pdo;
+    private $db;
 
     public function __construct()
     {
@@ -11,6 +14,7 @@ class UserModel{
         $dbName = "super-week";
         $dbUser = "root";
         $dbPassword = "";
+        $db = "user";
         try{
             $this->pdo = new \PDO("mysql:host=$host;dbname=$dbName;charset=utf8", $dbUser,$dbPassword);
             $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
@@ -25,6 +29,16 @@ class UserModel{
         $request = "INSERT INTO user(first_name, last_name, email, password) VALUES(:firstname, :lastname, :email, :password)";
         $insert = $this->pdo->prepare($request);
         $insert->execute($values);
+    }
+
+    public function findAll(){
+
+        $request = "SELECT * FROM $this->db";
+        $select = $this->db->prepare($request);
+        $select->execute();
+        $result = $select->fetchAll(PDO::FETCH_ASSOC);
+        
+        return $result;
     }
 }
 

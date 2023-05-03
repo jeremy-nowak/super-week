@@ -24,7 +24,16 @@ class UserController{
             
 
         }
+            
+        
     }
+
+    public function list(){
+
+        $userModel = new UserModel();
+        $select = $userModel->findAll();
+        
+
 }
 
 ?>
