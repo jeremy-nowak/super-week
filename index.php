@@ -11,8 +11,9 @@ $router->map('GET', '/', function () {
 }, 'home');
 
 $router->map('GET', '/users', function () {
-    $userControllers = new UserController();
-    $userControllers->findAll();
+    $userController = new UserController();
+    $users = $userController->list();
+    echo $users;
 }, 'users');
 
 $router->map('GET', '/users/[i:id]', function ($id) {

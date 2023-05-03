@@ -32,8 +32,8 @@ class UserController{
 
         $userModel = new UserModel();
         $select = $userModel->findAll();
-        
+        return json_encode($select);
+    }
+
 
 }
-
-?>

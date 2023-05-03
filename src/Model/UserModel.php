@@ -6,7 +6,6 @@ use PDO;
 
 class UserModel{
     private $pdo;
-    private $db;
 
     public function __construct()
     {
@@ -33,8 +32,8 @@ class UserModel{
 
     public function findAll(){
 
-        $request = "SELECT * FROM $this->db";
-        $select = $this->db->prepare($request);
+        $request = "SELECT * FROM user";
+        $select = $this->pdo->prepare($request);
         $select->execute();
         $result = $select->fetchAll(PDO::FETCH_ASSOC);
         
