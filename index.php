@@ -1,4 +1,5 @@
 <?php
+use App\Controller\UserController;
 require 'vendor/autoload.php';
 $router = new AltoRouter();
 $router->setBasePath('/super-week');
@@ -13,7 +14,13 @@ $router->map('GET', '/users', function () {
 
 $router->map('GET', '/users/[i:id]', function ($id) {
     echo "<h1>Bienvenue sur la page de l'utilisateur $id</h1>";
-}, 'user');     
+}, 'user');
+
+$router->map('GET', '/users/fill', function () {
+    $userController = new UserController();
+    $userController->fill();
+}, 'fill');
+
 
 
 
@@ -29,8 +36,4 @@ if (is_array($match) && is_callable($match['target'])) {
     header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
 }
 
-?>
-
-<?php
-var_dump($_SERVER)
 ?>

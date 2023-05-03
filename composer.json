@@ -1,14 +1,13 @@
-
 {
     
     "require": {
-        "altorouter/altorouter": "1.1.0"
+        "altorouter/altorouter": "1.1.0",
+        "fakerphp/faker": "^1.21"
     },
 
     "autoload": {
         "psr-4": {
-            "Router\\": "Router/",
-            "Exeptions\\": "Exeptions/"
+            "App\\": "src/"
         }
     }
 }
