@@ -12,8 +12,7 @@ $router->map('GET', '/', function () {
 
 $router->map('GET', '/users', function () {
     $userController = new UserController();
-    $users = $userController->list();
-    echo $users;
+    $userController->list();
 }, 'users');
 
 $router->map('GET', '/users/[i:id]', function ($id) {

@@ -1,6 +1,5 @@
 <?php
 namespace App\Controller;
-
 use Faker;
 use App\Model\UserModel;
 
@@ -31,8 +30,12 @@ class UserController{
     public function list(){
 
         $userModel = new UserModel();
-        $select = $userModel->findAll();
-        return json_encode($select);
+        $users = $userModel->findAll();
+        
+        if($users){
+            require "src/View/user_list.php";
+
+        }
     }
 
 
