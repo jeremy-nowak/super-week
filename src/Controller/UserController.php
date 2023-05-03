@@ -38,5 +38,9 @@ class UserController{
         }
     }
 
+    public function addUsers(){
+        
+    }
+
 
 }

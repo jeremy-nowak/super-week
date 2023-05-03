@@ -25,6 +25,19 @@ $router->map('GET', '/users/fill', function () {
 }, 'fill');
 
 
+$router->map('GET', '/register', function () {
+    require "src/View/register.php";
+}, 'display_register');
+
+$router->map('POST', '/register', function () {
+    $userController = new UserController();
+    $userController->addUsers();
+}, 'register');
+
+
+
+
+
 
 
 
