@@ -60,8 +60,12 @@ $router->map('GET', '/logout', function () {
     require "src/View/login.php";
 }, 'logout');
 
+// ---------------------------Books/write--------------------------------
 
+$router->map('GET', '/books/write', function () {
 
+    require "src/View/books.php";
+}, 'books');
 
 
 // match
