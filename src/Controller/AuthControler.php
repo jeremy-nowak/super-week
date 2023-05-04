@@ -69,17 +69,20 @@ class AuthControler
     }
 
 
-    public function logFormDisplay(){
+    public function logFormDisplay()
+    {
 
-        if(!isset($_SESSION['user'])){
+        if (!isset($_SESSION['user'])) {
             require "src/View/login.php";
         }
-        
     }
 
-    public function logout(){
+    public function logout()
+    {
         session_destroy();
         header("location: /super-week/login");
     }
+
+
 
 }

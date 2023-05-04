@@ -1,5 +1,6 @@
 <?php
 namespace App\Controller;
+
 use Faker;
 use App\Model\UserModel;
 
@@ -32,6 +33,14 @@ class UserController{
             require "src/View/user_list.php";
 
         }
+    }
+    public function displayUserInfo($id){
+
+        $usermodel = new UserModel();
+        $user = $usermodel->findOneById($id);
+
+        echo json_encode($user);
+
     }
 
 }

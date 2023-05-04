@@ -18,9 +18,11 @@ $router->map('GET', '/users', function () {
     $userController->list();
 }, 'users');
 
+// ---------------------------Users id .json-------------------------------
 $router->map('GET', '/users/[i:id]', function ($id) {
-    echo "<h1>Bienvenue sur la page de l'utilisateur $id</h1>";
-}, 'user');
+    $userControleur = new UserController();
+    $userControleur->displayUserInfo($id);
+}, 'users.json');
 
 $router->map('GET', '/users/fill', function () {
     $userController = new UserController();
@@ -57,6 +59,8 @@ $router->map('GET', '/logout', function () {
     $authControleur->logout();
     require "src/View/login.php";
 }, 'logout');
+
+
 
 
 
