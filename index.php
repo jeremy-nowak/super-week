@@ -40,7 +40,8 @@ $router->map('POST', '/register', function () {
 // ----------------------------Login-------------------------------------
 
 $router->map('GET', '/login', function () {
-    require "src/View/login.php";
+    $authControleur = new AuthControler();
+    $authControleur->logFormDisplay();
 }, 'display_login');
 
 $router->map('POST', '/login', function () {
@@ -48,8 +49,17 @@ $router->map('POST', '/login', function () {
     $authControleur->userConnect();
 }, 'login');
 
+// -------------------------Logout----------------------------------------
 
 
+$router->map('GET', '/logout', function () {
+    $authControleur = new AuthControler();
+    $authControleur->logout();
+    require "src/View/login.php";
+}, 'logout');
+
+
+----------------------------
 
 
 

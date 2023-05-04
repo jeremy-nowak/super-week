@@ -52,8 +52,6 @@ class AuthControler
             $pass = htmlspecialchars(trim($_POST['pass']));
             if ($usermodel->userExist($email)) {
                 $userInfo = $usermodel->findOne($email);
-                var_dump($userInfo);
-
                 if (password_verify($pass, $userInfo["password"])) {
 
                     $_SESSION['user'] = [
@@ -69,4 +67,19 @@ class AuthControler
             echo "Error";
         }
     }
+
+
+    public function logFormDisplay(){
+
+        if(!isset($_SESSION['user'])){
+            require "src/View/login.php";
+        }
+        
+    }
+
+    public function logout(){
+        session_destroy();
+        header("location: /super-week/login");
+    }
+
 }
