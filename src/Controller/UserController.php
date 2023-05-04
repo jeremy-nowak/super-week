@@ -20,11 +20,7 @@ class UserController{
                 "email"=>$email,
                 "password"=>password_hash("azerty", PASSWORD_DEFAULT),
             ]);
-            
-
         }
-            
-        
     }
 
     public function list(){
@@ -37,6 +33,5 @@ class UserController{
 
         }
     }
-
 
 }

@@ -39,6 +39,42 @@ class UserModel{
         
         return $result;
     }
+
+    public function findOne($email){
+
+        $request = "SELECT * FROM user WHERE email = :email";
+        $select = $this->pdo->prepare($request);
+        $select->execute([
+            ":email"=>$email
+        ]);
+        $result = $select->fetch(PDO::FETCH_ASSOC);
+                    
+        return $result;
+    }
+
+    public function createUser(array $values){
+
+        $request = "INSERT INTO user (last_name, first_name, email, password) VALUES(:last_name, :first_name, :email, :password)";
+        $insert = $this->pdo->prepare($request);
+        $response = $insert->execute($values);
+        return $response;
+    }
+
+    public function userExist($email){
+        $request = "SELECT * FROM user WHERE email= :email";
+        $select = $this->pdo->prepare($request);
+        $select->execute([
+            ":email"=>$email
+        ]);
+        $result = $select->fetchAll(PDO::FETCH_ASSOC);
+        if ($result){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
 }
 
 
