@@ -59,14 +59,6 @@ $router->map('GET', '/logout', function () {
 }, 'logout');
 
 
-----------------------------
-
-
-
-
-
-
-
 
 // match
 $match = $router->match();
