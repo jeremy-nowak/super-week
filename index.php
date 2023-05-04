@@ -3,8 +3,8 @@
 use App\Controller\AuthControler;
 use App\Controller\UserController;
 use App\Controller\AuthController;
-use App\Model\UserModel;
-
+use App\Controller\BooksController;
+session_start();
 require 'vendor/autoload.php';
 $router = new AltoRouter();
 $router->setBasePath('/super-week');
@@ -63,9 +63,16 @@ $router->map('GET', '/logout', function () {
 // ---------------------------Books/write--------------------------------
 
 $router->map('GET', '/books/write', function () {
+    $bookController = new BooksController();
+    $bookController->displayBookForm();
 
-    require "src/View/books.php";
-}, 'books');
+}, 'booksDisplay');
+
+$router->map('POST','/books/write', function() {
+
+},  'booksData');
+
+
 
 
 // match
