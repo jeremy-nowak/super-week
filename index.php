@@ -1,5 +1,8 @@
 <?php
+
+use App\Controller\AuthControler;
 use App\Controller\UserController;
+use App\Controller\AuthController;
 use App\Model\UserModel;
 
 require 'vendor/autoload.php';
@@ -24,15 +27,29 @@ $router->map('GET', '/users/fill', function () {
     $userController->fill();
 }, 'fill');
 
-
+// -----------------------Register-------------------------------------
 $router->map('GET', '/register', function () {
     require "src/View/register.php";
 }, 'display_register');
 
 $router->map('POST', '/register', function () {
-    $userController = new UserController();
-    $userController->addUsers();
+    $authControleur = new AuthControler();
+    $authControleur->register();
 }, 'register');
+
+// ----------------------------Login-------------------------------------
+
+$router->map('GET', '/login', function () {
+    require "src/View/login.php";
+}, 'display_login');
+
+$router->map('POST', '/login', function () {
+    $authControleur = new AuthControler();
+    $authControleur->userConnect();
+}, 'login');
+
+
+
 
 
 
