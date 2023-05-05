@@ -50,5 +50,13 @@ class BooksController{
 
 
     }
+
+    public function displayBooksById($id){
+
+        $bookmodel = new BookModel();
+        $book = $bookmodel->findOne($id);
+
+        echo $book;
+    }
 }
 ?>

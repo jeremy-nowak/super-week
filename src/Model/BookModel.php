@@ -43,6 +43,19 @@ class BookModel{
 
     }
 
+    public function findOne($id)
+    {
+       
+        $request = "SELECT * FROM book WHERE id = :id";
+        $select = $this->pdo->prepare($request);
+        $select->execute([
+            ":id" => $id
+        ]);
+        $result = $select->fetch(PDO::FETCH_ASSOC);
+
+        return json_encode($result);
+    }
+
 
 
 }

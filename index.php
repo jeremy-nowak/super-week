@@ -82,6 +82,12 @@ $router->map('GET', '/logout', function () {
 
 }, 'booksDisplay');
 
+    $router->map('GET','/books/[i:id]', function($id) {
+    $bookController = new booksController();
+    $bookController->displayBooksById($id);
+
+}, 'booksDisplayById');
+
 
 
 
