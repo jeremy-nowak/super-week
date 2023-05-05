@@ -14,8 +14,8 @@
         echo "<h2> $error </h2>";
     }
     ?>
-
-    <form method="post" action="">
+array_diff_uassoc
+    <form method="post">
 
         <label for="mail">Mail:</label>
         <input name="email" type="email" placeholder="Email">
