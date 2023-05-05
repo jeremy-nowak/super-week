@@ -37,6 +37,7 @@ $router->map('GET', '/register', function () {
 $router->map('POST', '/register', function () {
     $authControleur = new AuthControler();
     $authControleur->register();
+    
 }, 'register');
 
 // ----------------------------Login-------------------------------------
@@ -63,15 +64,18 @@ $router->map('GET', '/logout', function () {
 // ---------------------------Books/write--------------------------------
 
 $router->map('GET', '/books/write', function () {
+    var_dump($_SESSION);
     $bookController = new BooksController();
     $bookController->displayBookForm();
+    
 
 }, 'booksDisplay');
 
 $router->map('POST','/books/write', function() {
+    $addBook = new booksController();
+    $addBook->addBook();
 
-},  'booksData');
-
+}, 'booksAdd');
 
 
 

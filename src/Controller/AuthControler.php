@@ -11,16 +11,13 @@ class AuthControler
     {
 
         if (!empty($_POST['last_name']) && !empty($_POST['first_name']) && !empty($_POST['email']) && !empty($_POST['first_name']) && !empty($_POST['pass']) === !empty($_POST['pass_conf'])) {
-            $usermodel = new UserModel();
-
-
-
+            
             $lastname = htmlspecialchars(trim($_POST['last_name']));
             $firstname = htmlspecialchars(trim($_POST['first_name']));
             $email = htmlspecialchars(trim($_POST['email']));
             $pass = htmlspecialchars(trim($_POST['pass']));
 
-
+            $usermodel = new UserModel();
             if (!$usermodel->userExist($email)) {
 
                 $response = $usermodel->createUser([
@@ -82,7 +79,4 @@ class AuthControler
         session_destroy();
         header("location: /super-week/login");
     }
-
-
-
 }
