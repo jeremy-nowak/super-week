@@ -9,9 +9,10 @@
 <body>
     <form method="post">
         <label for="title">Title</label>
-    <input name="title" type="text" placeholder="Title">
-    <br><textarea name="content" cols="50" rows="10">Write your book here</textarea>
-    <br><button name="validate" type="submit">Validate</button>
+        <input name="title" type="text" placeholder="Title">
+
+        <br><textarea name="content" cols="50" rows="10">Write your book here</textarea>
+        <br><button name="validate" type="submit">Validate</button>
     </form>
 </body>
 </html>
