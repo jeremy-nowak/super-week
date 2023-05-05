@@ -14,8 +14,7 @@ class BooksController{
 
 
     public function addBook(){
-        var_dump($_POST);
-        var_dump($_SESSION);
+
         if(!empty($_POST['title']) && !empty($_POST['content'])){
 
             $title = htmlspecialchars($_POST['title']) ;
@@ -40,6 +39,16 @@ class BooksController{
         else{
             echo "un des champs est vide";
         }
+    }
+
+    public function displayBooks(){
+        
+        $bookmodel = new BookModel();
+        $book = $bookmodel->findAll();
+
+        echo json_encode($book);
+
+
     }
 }
 ?>

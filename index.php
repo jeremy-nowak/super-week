@@ -63,19 +63,26 @@ $router->map('GET', '/logout', function () {
 
 // ---------------------------Books/write--------------------------------
 
-$router->map('GET', '/books/write', function () {
-    var_dump($_SESSION);
+    $router->map('GET', '/books/write', function () {
     $bookController = new BooksController();
     $bookController->displayBookForm();
     
 
-}, 'booksDisplay');
+}, 'booksDisplayForm');
 
-$router->map('POST','/books/write', function() {
-    $addBook = new booksController();
-    $addBook->addBook();
+    $router->map('POST','/books/write', function() {
+    $bookController = new booksController();
+    $bookController->addBook();
 
 }, 'booksAdd');
+
+    $router->map('GET','/books', function() {
+    $bookController = new booksController();
+    $bookController->displayBooks();
+
+}, 'booksDisplay');
+
+
 
 
 
