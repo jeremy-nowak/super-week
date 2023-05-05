@@ -30,7 +30,7 @@ class UserController{
         $users = $userModel->findAll();
         
         if($users){
-            require "src/View/user_list.php";
+            echo json_encode($users);
         }
     }
     public function displayUserInfo($id){
