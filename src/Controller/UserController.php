@@ -31,7 +31,6 @@ class UserController{
         
         if($users){
             require "src/View/user_list.php";
-
         }
     }
     public function displayUserInfo($id){
