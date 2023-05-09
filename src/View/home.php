@@ -10,12 +10,11 @@
 <body>
     <button name="buttonUsers" id="buttonUsers">Display users</button>
     <button name="buttonBooks" id="buttonBooks">Display books</button>
-    <button name="buttonUsersById" id="buttonUsersById">Display users by id</button>
+    <button name="buttonUsersById" id="buttonUsersById">Display users by id</button>    
     <input id="inputId" type="number">
-
-
+    <button name="buttonBookById" id="buttonBookById">Display users by id</button>
+    <input id="inputBook" type="number">
 
     <div class="result"></div>
-
 </body>
 </html>
