@@ -73,9 +73,4 @@ buttonUsers.addEventListener("click", async function (e) {
     div.appendChild(email);
 
 
-    
-
-
-
-
   })
