@@ -10,5 +10,9 @@
 <body>
     <button name="buttonUsers" id="buttonUsers">Display users</button>
     <div class="result"></div>
+
+    <button name="buttonBooks" id="buttonBooks">Display books</button>
+    <div class="resultBooks"></div>
+
 </body>
 </html>
