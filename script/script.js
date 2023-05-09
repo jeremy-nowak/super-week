@@ -72,10 +72,33 @@ buttonUsers.addEventListener("click", async function (e) {
     email.innerHTML = `${UsersById.email}`;
     div.appendChild(email);
 
+  })
+// ---------------------------Display Books By Id--------------------------------------
+
+let buttonBookById = document.querySelector('#buttonBookById');
+let resultBookByID = document.querySelector('.result');
+
+buttonBookById.addEventListener("click", async function(e){
+  e.preventDefault()
+
+  let inputBook = document.querySelector('#inputBook');
+    let id = inputBook.value;
+
+    let promiseBookByID = await fetch(`/super-week/books/${id}`);
+    let bookById = await promiseBookByID.json();
+
+    resultBookByID.innerHTML = "";
 
     
+    const titre = document.createElement("h2");
+    const content = document.createElement("h5");
+
+    titre.innerHTML = `${bookById.title} `;
+    div.appendChild(titre);
+
+    content.innerHTML = `${bookById.content}`;
+    div.appendChild(content);
+
+})
 
 
-
-
-  })
