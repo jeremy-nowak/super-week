@@ -25,7 +25,7 @@ buttonUsers.addEventListener("click", async function (e) {
 });
   // -----------------------Display Books----------------------------
   let buttonBooks = document.querySelector("#buttonBooks");
-  let resultBooks = document.querySelector(".resultBooks");
+  let resultBooks = document.querySelector(".result");
 
   buttonBooks.addEventListener("click", async function (e) {
     e.preventDefault();
@@ -45,3 +45,37 @@ buttonUsers.addEventListener("click", async function (e) {
       resultBooks.appendChild(content);
     });
   });
+
+  // -----------------------------Diplay Users By Id------------------------------------
+
+  let buttonUsersById = document.querySelector('#buttonUsersById');
+  let resultUsersByID = document.querySelector('.result');
+
+  buttonUsersById.addEventListener('click', async function(e){
+    e.preventDefault();
+
+    let input = document.querySelector('#inputId');
+    let id = input.value;
+
+    let promiseUsersByID = await fetch(`/super-week/users/${id}`);
+    let UsersById = await promiseUsersByID.json();
+
+    resultUsersByID.innerHTML = "";
+
+    
+    const name = document.createElement("h2");
+    const email = document.createElement("h5");
+
+    name.innerHTML = `${UsersById.first_name} ${UsersById.last_name}`;
+    div.appendChild(name);
+
+    email.innerHTML = `${UsersById.email}`;
+    div.appendChild(email);
+
+
+    
+
+
+
+
+  })
