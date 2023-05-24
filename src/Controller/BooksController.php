@@ -48,7 +48,6 @@ class BooksController{
 
         echo json_encode($book);
 
-
     }
 
     public function displayBooksById($id){

@@ -12,7 +12,7 @@
     <button name="buttonBooks" id="buttonBooks">Display books</button>
     <button name="buttonUsersById" id="buttonUsersById">Display users by id</button>    
     <input id="inputId" type="number">
-    <button name="buttonBookById" id="buttonBookById">Display users by id</button>
+    <button name="buttonBookById" id="buttonBookById">Display books by id</button>
     <input id="inputBook" type="number">
 
     <div class="result"></div>

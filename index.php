@@ -76,6 +76,7 @@ $router->map('GET', '/logout', function () {
 
 }, 'booksAdd');
 
+// ---------------------- Display books--------------------------
     $router->map('GET','/books', function() {
     $bookController = new booksController();
     $bookController->displayBooks();

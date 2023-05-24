@@ -27,7 +27,6 @@ class BookModel{
 
     public function findAll(): array|false 
     {
-
         $request = "SELECT * FROM book";
         $select = $this->pdo->prepare($request);
         $select->execute();
